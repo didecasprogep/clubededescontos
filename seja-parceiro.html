@@ -1,16 +1,65 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Seja um parceiro | Clube de Descontos da UFMA</title>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seja um parceiro | Clube de Descontos da UFMA</title>
 <style>
-*{box-sizing:border-box}body{margin:0;color:#302329;background:#faf7f1;font:16px/1.5 Arial,sans-serif}header,main,footer{max-width:1380px;margin:auto;padding-inline:clamp(20px,6vw,90px)}header,footer{display:flex;align-items:center;justify-content:space-between;gap:14px}header{min-height:82px;border-bottom:1px solid #dbd1ca}a{color:#620222;text-underline-offset:4px}.brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}.brand strong{font-size:30px;letter-spacing:-2px;color:#620222}.brand span{font-size:12px;line-height:1.3;border-left:1px solid #c6b6ad;padding-left:12px}header>a:last-child{font-size:14px}main{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(32px,7vw,110px);padding-block:clamp(36px,6vw,85px)}article{padding-top:12px}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#620222;font-weight:bold}h1{font:normal clamp(52px,6vw,90px)/1 Georgia,serif;letter-spacing:-.05em;margin:20px 0 28px}h1 em{color:#8d0333}article p{font-size:19px;max-width:39ch}article aside{border-left:3px solid #8d0333;padding-left:17px;margin-top:32px;max-width:39ch}form{padding:clamp(22px,3vw,44px);background:white;border:1px solid #e6ded8;border-radius:22px;box-shadow:0 16px 60px #5423360b;min-width:0}h2{font:normal 32px/1.1 Georgia,serif;margin:0 0 24px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:17px}.wide{grid-column:1/-1}label{display:block;font-size:14px;font-weight:600}label small{font-weight:400;color:#635b5e}input,textarea{display:block;width:100%;padding:12px;border:1px solid #cfc4c8;border-radius:7px;font:inherit;margin-top:6px;color:#302329;background:white}textarea{resize:vertical}button{border:0;border-radius:7px;background:#8d0333;color:white;font:600 16px Arial;padding:15px 22px;cursor:pointer}button:hover{background:#620222}a:focus-visible,input:focus,textarea:focus,button:focus-visible{outline:3px solid #246c85;outline-offset:3px}.hint{font-size:14px;color:#60555a;margin:18px 0 12px}.fallback{margin-top:18px;font-size:14px;overflow-wrap:anywhere}footer{border-top:1px solid #dbd1ca;padding-block:20px;font-size:13px}@media(max-width:800px){main{grid-template-columns:1fr;gap:25px}article{padding:0}article aside{margin-top:16px}h1{margin:12px 0}article p{font-size:17px}}@media(max-width:540px){.fields{grid-template-columns:1fr}.brand span{font-size:10px}header{min-height:68px}}
-</style></head><body>
+* { box-sizing: border-box }
+body { margin:0; color:#302329; background:#faf7f1; font:16px/1.5 Arial,sans-serif }
+header,main,footer { max-width:1380px; margin:auto; padding-inline:clamp(20px,6vw,90px) }
+header,footer { display:flex; align-items:center; justify-content:space-between; gap:14px }
+header { min-height:82px; border-bottom:1px solid #dbd1ca }
+a { color:#620222; text-underline-offset:4px }
+a:focus-visible { outline:3px solid #246c85; outline-offset:3px }
+.brand { display:flex; align-items:center; gap:12px; color:inherit; text-decoration:none }
+.brand strong { font-size:30px; letter-spacing:-2px; color:#620222 }
+.brand span { font-size:12px; line-height:1.3; border-left:1px solid #c6b6ad; padding-left:12px }
+header>a:last-child { font-size:14px }
+main { display:grid; grid-template-columns:.92fr 1.08fr; gap:clamp(32px,7vw,110px); padding-block:clamp(36px,6vw,85px) }
+article { padding-top:12px }
+.eyebrow { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#620222; font-weight:bold }
+h1 { font:normal clamp(52px,6vw,90px)/1 Georgia,serif; letter-spacing:-.05em; margin:20px 0 28px }
+h1 em { color:#8d0333 }
+article p { font-size:19px; max-width:39ch }
+article aside { border-left:3px solid #8d0333; padding-left:17px; margin-top:32px; max-width:39ch }
+.publico { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin:24px 0 }
+.publico div { border-top:1px solid #cfbcbf; padding-top:12px }
+.publico dt { color:#620222; font-weight:bold }
+.publico dt span { display:block; font:normal clamp(32px,3vw,44px)/1.15 Georgia,serif }
+.publico dd { margin:4px 0 0; font-size:15px }
+section { min-width:0 }
+#receber { width:100%; height:750px; border:0 }
+footer { border-top:1px solid #dbd1ca; padding-block:20px; font-size:13px }
+@media(max-width:800px) {
+ main { grid-template-columns:1fr; gap:25px }
+ article { padding:0 } article aside { margin-top:16px }
+ h1 { margin:12px 0 } article p { font-size:17px }
+}
+@media(max-width:540px) {
+ .brand span { font-size:10px } header { min-height:68px }
+ #receber { height:980px }
+}
+</style>
+</head>
+<body>
 <header><a class="brand" href="index.html"><strong>UFMA</strong><span>Pró-Reitoria de<br>Gestão de Pessoas</span></a><a href="index.html">← Voltar ao Clube</a></header>
-<main><article><div class="eyebrow">Clube de Descontos da UFMA</div><h1>Seja um<br><em>parceiro.</em></h1>
-<p>Sua empresa ou atividade profissional pode fazer parte do Clube. Conte à equipe da PROGEP qual benefício você gostaria de oferecer.</p>
-<aside><strong>O que incluir na proposta?</strong><br>Informe o produto ou serviço, a vantagem oferecida e as condições para utilizá-la.</aside></article>
-<section aria-label="Formulário de parceria"><iframe id="receber" title="Enviar proposta de parceria" hidden></iframe><p id="aviso">O formulário está aguardando ativação pela PROGEP.</p></section></main><footer>DIDECAS · PROGEP · UFMA</footer>
-<style>#receber{width:100%;height:750px;border:0}section{min-width:0}@media(max-width:540px){#receber{height:980px}}</style>
+<main>
+<article>
+<div class="eyebrow">Clube de Descontos da UFMA</div>
+<h1>Seja um<br><em>parceiro.</em></h1>
+<p><strong>Participar do Clube de Descontos da UFMA é gratuito.</strong> Empresas e profissionais podem oferecer benefícios sem pagar taxa de adesão ou mensalidade.</p>
+<p><strong>Dê visibilidade à sua marca.</strong> A UFMA poderá divulgar sua marca e os benefícios da parceria em seus canais oficiais de comunicação, conforme a disponibilidade de cada canal.</p>
+<dl class="publico" aria-label="Público que a parceria pode alcançar">
+<div><dt><span>+4 mil</span> servidores</dt><dd>Entre ativos e aposentados da UFMA.</dd></div>
+<div><dt><span>+8 mil</span> dependentes</dt><dd>Os benefícios também podem chegar às famílias dos servidores.</dd></div>
+</dl>
+<aside><strong>O que incluir na proposta?</strong><br>Apresente seu produto ou serviço, o benefício que deseja oferecer e as condições para aproveitá-lo.</aside>
+</article>
+<section aria-label="Formulário de parceria"><iframe id="receber" title="Enviar proposta de parceria" hidden></iframe><p id="aviso">O formulário está aguardando ativação pela PROGEP.</p></section>
+</main>
+<footer>DIDECAS · PROGEP · UFMA</footer>
 <script>
-// Cole entre as aspas o endereço do aplicativo implantado na conta institucional.
 const urlDoFormulario = "https://script.google.com/a/macros/ufma.br/s/AKfycbwS68HOCe_UBbfmn0eOfvLqtzcglpfIutU1smkFtiv0crLKypnn0cQqVlvTnAsaA_Zq/exec";
 if (urlDoFormulario) {
   const frame = document.querySelector('#receber');
@@ -24,4 +73,6 @@ if (urlDoFormulario) {
   link.textContent = 'Abrir formulário em nova aba';
   aviso.replaceChildren(link);
 }
-</script></body></html>
+</script>
+</body>
+</html>
