@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Central de dúvidas | Clube de Descontos da UFMA</title>
+  <style>
+    :root { --papel:#faf7f1; --texto:#302329; --vinho:#8d0333; --escuro:#620222; --linha:#d9cfc8 }
+    * { box-sizing:border-box }
+    body { margin:0; background:var(--papel); color:var(--texto); font:16px/1.55 "DM Sans",Arial,sans-serif }
+    header, main, footer { max-width:1440px; margin:auto; padding-inline:clamp(22px,6vw,96px) }
+    header { min-height:85px; display:flex; align-items:center; justify-content:space-between; gap:18px; border-bottom:1px solid var(--linha) }
+    a { color:var(--escuro); text-underline-offset:4px }
+    a:focus-visible, summary:focus-visible { outline:3px solid #176592; outline-offset:4px }
+    .brand { display:flex; align-items:center; gap:14px; text-decoration:none }
+    .brand strong { font-size:32px; letter-spacing:-2px }
+    .brand span { color:var(--texto); padding-left:14px; border-left:1px solid var(--linha); font-size:13px; line-height:1.3 }
+    header>a:last-child { font-size:14px }
+    main { padding-block:clamp(36px,6vw,80px) }
+    .kicker { display:flex; align-items:center; gap:12px; font-size:12px; font-weight:bold; letter-spacing:.14em; text-transform:uppercase }
+    .kicker::before { content:""; width:30px; height:2px; background:var(--vinho) }
+    h1,h2 { font-family:Georgia,serif; font-weight:400 }
+    h1 { font-size:clamp(48px,6.6vw,90px); line-height:1.05; letter-spacing:-.055em; margin:18px 0 12px }
+    h1 em { color:var(--vinho) }
+    .intro { font-size:18px; margin:0 0 clamp(30px,4vw,56px); max-width:60ch }
+    .columns { display:grid; grid-template-columns:minmax(0,1.8fr) minmax(270px,1fr); gap:clamp(28px,5vw,76px); align-items:start }
+    h2 { font-size:clamp(26px,3vw,36px); line-height:1.15; margin:0 0 22px }
+    details { border-top:1px solid var(--linha) }
+    details:last-child { border-bottom:1px solid var(--linha) }
+    summary { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:20px 2px; font-size:17px; font-weight:650; cursor:pointer; list-style:none }
+    summary::-webkit-details-marker { display:none }
+    summary::after { content:""; flex:none; width:9px; height:9px; border:solid var(--vinho); border-width:0 2px 2px 0; transform:rotate(45deg); margin-right:6px }
+    details[open] summary::after { transform:rotate(225deg) }
+    details[open] summary, summary:hover { color:var(--vinho) }
+    details p { max-width:68ch; margin:0 0 16px }
+    aside { background:white; padding:clamp(22px,3vw,38px); border:1px solid var(--linha); border-radius:18px }
+    address { font-style:normal; overflow-wrap:anywhere }
+    address p { margin:16px 0 0 }
+    address strong { display:block; color:var(--escuro) }
+    footer { border-top:1px solid var(--linha); padding-block:20px; font-size:13px }
+    @media(max-width:760px) { .columns { grid-template-columns:1fr } }
+    @media(max-width:460px) { header { flex-wrap:wrap; padding-block:12px; gap:8px } .brand span { font-size:11px } }
+  </style>
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html"><strong>UFMA</strong><span>Pró-Reitoria de<br>Gestão de Pessoas</span></a>
+  <a href="index.html">← Voltar ao Clube</a>
+</header>
+<main>
+  <div class="kicker">Clube de Descontos da UFMA</div>
+  <h1>Central de <em>dúvidas</em></h1>
+  <p class="intro">Saiba quem pode usar os descontos, como comprovar seu vínculo e como oferecer um benefício pelo Clube.</p>
+  <div class="columns">
+    <section aria-labelledby="perguntas">
+      <h2 id="perguntas">Perguntas frequentes</h2>
+      <details open>
+        <summary>O que é o Clube de Descontos da UFMA?</summary>
+        <p>É uma iniciativa da Pró-Reitoria de Gestão de Pessoas (PROGEP) que reúne empresas e profissionais que oferecem descontos, preços especiais e outras vantagens em produtos e serviços. Consulte as condições de cada oferta na página de <a href="parceiros.html">parceiros do Clube</a>.</p>
+      </details>
+      <details>
+        <summary>Quem tem direito aos descontos?</summary>
+        <p>Servidores ativos e aposentados da UFMA e seus dependentes diretos cadastrados no SIGRH. O Clube também contempla empregados da EBSERH vinculados ao HU-UFMA e seus dependentes diretos cadastrados no sistema de gestão de pessoas.</p>
+        <p>Nas parcerias firmadas pelo edital anterior, o atendimento ao público da EBSERH depende da adesão formal de cada parceiro. Confira o público atendido antes de utilizar o benefício.</p>
+      </details>
+      <details>
+        <summary>Como comprovar meu vínculo para garantir o desconto?</summary>
+        <p>Apresente ao parceiro sua identificação funcional, contracheque ou documento equivalente que comprove o vínculo com a UFMA ou com a EBSERH/HU-UFMA.</p>
+        <p>Para dependentes, apresente a declaração de dependência emitida pelo SIGRH (UFMA), pelo MentorRH (EBSERH) ou documento equivalente que comprove o cadastro.</p>
+      </details>
+      <details>
+        <summary>Como faço para ser parceiro do Clube de Descontos?</summary>
+        <p><strong>Pessoas físicas maiores de 18 anos e pessoas jurídicas regularmente constituídas podem participar.</strong> A inscrição é gratuita e pode ser feita durante a vigência do edital. Se a atividade exigir registro profissional, licença ou autorização, apresente a comprovação correspondente.</p>
+        <p>Na página <a href="seja-parceiro.html">Seja um parceiro</a>, você pode apresentar seu produto ou serviço e o benefício que deseja oferecer.</p>
+        <p>Para formalizar a inscrição, envie o Anexo I preenchido e assinado e os documentos do item 6.3.1 (pessoa jurídica) ou 6.3.2 (pessoa física) para <a href="mailto:clubededescontos.progep@ufma.br">clubededescontos.progep@ufma.br</a>. Após a análise e aprovação da proposta pela PROGEP, a UFMA e o parceiro assinam o Termo de Parceria.</p>
+      </details>
+      <details>
+        <summary>O que minha marca ganha ao se tornar parceira da UFMA?</summary>
+        <p>Sua marca pode ganhar visibilidade nos <strong>canais oficiais de comunicação da Universidade</strong> e se aproximar de uma comunidade que reúne <strong>mais de 4 mil servidores ativos e aposentados e mais de 8 mil dependentes</strong>. Ao divulgar o benefício, a UFMA ajuda esse público a conhecer seus produtos ou serviços e a saber como aproveitar as condições oferecidas.</p>
+        <p>A parceria também pode abrir espaço para <strong>apresentar sua marca em eventos e ações da PROGEP</strong>, conforme a relação da proposta com a atividade, a disponibilidade de espaço e a autorização prévia da equipe. A participação no Clube é gratuita, e a UFMA define os canais e a frequência de divulgação conforme sua programação.</p>
+      </details>
+      <details>
+        <summary>Quero indicar um parceiro. O que fazer?</summary>
+        <p>Envie o nome da empresa ou do profissional e um contato comercial para <a href="mailto:clubededescontos.progep@ufma.br?subject=Indica%C3%A7%C3%A3o%20de%20parceiro">a equipe do Clube</a>. Se preferir, compartilhe a página <a href="seja-parceiro.html">Seja um parceiro</a> para que a própria pessoa apresente a proposta.</p>
+      </details>
+      <details>
+        <summary>Quais documentos regulamentam o Clube de Descontos?</summary>
+        <p>O edital de credenciamento define quem pode participar e como funciona a adesão. Seus anexos incluem o Formulário de Adesão e Proposta de Benefícios (Anexo I) e o Termo de Parceria para Concessão de Benefícios (Anexo II).</p>
+        <p>Para as parcerias celebradas pelo Edital PROGEP nº 150/2024, aplicam-se esse edital e o Termo Aditivo nº 001/2024 até o término ou a substituição formal de cada parceria. Para consultar o edital e os anexos aplicáveis à sua proposta, <a href="mailto:clubededescontos.progep@ufma.br?subject=Documentos%20do%20Clube">solicite os documentos à PROGEP</a>.</p>
+      </details>
+    </section>
+    <aside aria-labelledby="contato">
+      <h2 id="contato">Fale com o Clube</h2>
+      <address>
+        <p><strong>E-mail</strong><a href="mailto:clubededescontos.progep@ufma.br">clubededescontos.progep@ufma.br</a></p>
+        <p><strong>Telefone</strong><a href="tel:+559832728820">(98) 3272-8820</a></p>
+        <p><strong>Atendimento presencial</strong>Prédio Castelão, andar térreo<br>Av. dos Portugueses, 1966 – Vila Bacanga<br>São Luís – MA, CEP 65080-805</p>
+      </address>
+    </aside>
+  </div>
+</main>
+<footer>DIDECAS · PROGEP · UFMA</footer>
+</body>
+</html>
