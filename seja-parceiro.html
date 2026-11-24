@@ -40,6 +40,8 @@ footer { border-top:1px solid #dbd1ca; padding-block:20px; font-size:13px }
  .brand span { font-size:10px } header { min-height:68px }
  #receber { height:980px }
 }
+form{padding:clamp(22px,3vw,44px);background:white;border:1px solid #e6ded8;border-radius:22px}
+form h2{font:normal 32px/1.1 Georgia,serif;margin:0 0 24px}.campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.inteiro{grid-column:1/-1}label{font-size:14px;font-weight:600}small{font-weight:normal}input,textarea{display:block;width:100%;padding:12px;border:1px solid #cfc4c8;border-radius:7px;font:16px Arial;margin-top:6px}textarea{resize:vertical}.nota,#status{font-size:14px;color:#60555a}#status:empty{display:none}button{border:0;border-radius:7px;background:#8d0333;color:white;font:600 16px Arial;padding:15px 22px;cursor:pointer}button:disabled{opacity:.65}form iframe{width:100%;height:110px;border:0}@media(max-width:540px){.campos{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -56,23 +58,60 @@ footer { border-top:1px solid #dbd1ca; padding-block:20px; font-size:13px }
 </dl>
 <aside><strong>O que incluir na proposta?</strong><br>Apresente seu produto ou serviço, o benefício que deseja oferecer e as condições para aproveitá-lo.</aside>
 </article>
-<section aria-label="Formulário de parceria"><iframe id="receber" title="Enviar proposta de parceria" hidden></iframe><p id="aviso">O formulário está aguardando ativação pela PROGEP.</p></section>
+<section aria-labelledby="titulo-proposta">
+<form method="post" target="recibo" action="https://script.google.com/a/macros/ufma.br/s/AKfycbwS68HOCe_UBbfmn0eOfvLqtzcglpfIutU1smkFtiv0crLKypnn0cQqVlvTnAsaA_Zq/exec" id="proposta">
+<h2 id="titulo-proposta">Proposta de parceria</h2>
+<div class="campos">
+<label class="inteiro">Nome do responsável<input name="responsavel" maxlength="100" autocomplete="name" required></label>
+<label>Empresa ou profissional<input name="empresa" maxlength="120" autocomplete="organization" required></label>
+<label>CNPJ <small>(se houver)</small><input name="cnpj" maxlength="18" placeholder="00.000.000/0001-00"></label>
+<label>E-mail de contato<input name="email" type="email" maxlength="150" autocomplete="email" required></label>
+<label>Telefone <small>(opcional)</small><input name="telefone" type="tel" maxlength="30" autocomplete="tel"></label>
+<label class="inteiro">Benefício proposto<textarea name="mensagem" rows="4" maxlength="2000" placeholder="Descreva o benefício e as condições de uso." required></textarea></label>
+</div>
+<input name="token" type="hidden">
+<p class="nota">A equipe do Clube usará os dados informados para analisar a proposta e entrar em contato.</p>
+<button type="submit" disabled>Enviar proposta</button>
+<p aria-live="polite" id="status"></p>
+<iframe name="recibo" title="Resultado do envio da proposta" hidden></iframe>
+<noscript><a href="https://script.google.com/a/macros/ufma.br/s/AKfycbwS68HOCe_UBbfmn0eOfvLqtzcglpfIutU1smkFtiv0crLKypnn0cQqVlvTnAsaA_Zq/exec">Abrir formulário em nova aba</a></noscript>
+</form>
+</section>
+
 </main>
 <footer>DIDECAS · PROGEP · UFMA</footer>
 <script>
-const urlDoFormulario = "https://script.google.com/a/macros/ufma.br/s/AKfycbwS68HOCe_UBbfmn0eOfvLqtzcglpfIutU1smkFtiv0crLKypnn0cQqVlvTnAsaA_Zq/exec";
-if (urlDoFormulario) {
-  const frame = document.querySelector('#receber');
-  frame.src = urlDoFormulario;
-  frame.hidden = false;
-  const aviso = document.querySelector('#aviso');
-  const link = document.createElement('a');
-  link.href = urlDoFormulario;
-  link.target = '_blank';
-  link.rel = 'noopener';
-  link.textContent = 'Abrir formulário em nova aba';
-  aviso.replaceChildren(link);
-}
+const form = document.querySelector('#proposta');
+const enviar = form.querySelector('button');
+const recibo = form.querySelector('iframe');
+const statusEnvio = document.querySelector('#status');
+let ultimaProposta;
+let temporizador;
+enviar.disabled = false;
+form.addEventListener('submit', () => {
+  const dados = new FormData(form);
+  dados.delete('token');
+  const proposta = JSON.stringify([...dados]);
+  if (proposta !== ultimaProposta) {
+    form.elements.token.value = crypto.randomUUID();
+    ultimaProposta = proposta;
+  }
+  enviar.disabled = true;
+  recibo.hidden = false;
+  statusEnvio.textContent = 'Enviando proposta… Aguarde o resultado abaixo.';
+  clearTimeout(temporizador);
+  temporizador = setTimeout(() => {
+    enviar.disabled = false;
+    statusEnvio.textContent = 'Se a confirmação não aparecer abaixo, tente enviar novamente.';
+  }, 35000);
+});
+recibo.addEventListener('load', () => {
+  if (recibo.hidden) return;
+  clearTimeout(temporizador);
+  enviar.disabled = false;
+  statusEnvio.textContent = 'Resultado do envio';
+});
 </script>
+
 </body>
 </html>
